@@ -1,0 +1,53 @@
+<?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+$_SESSION['userid'] = 'Gordon';
+
+
+
+?>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>testForm</title>
+</head>
+<body>
+<label for='userid'></label><input type='text' name='userid' id='userid' ><br><br>
+<input type='file' name='ifile' accept='video/*' id='ifile' ><br><br>
+<label for='caption'>Caption</label><input type='text' name='caption' id='caption' ><br><br>
+<label for='fileid'>Fileid</label><input type='text' name='fileid' id='fileid' value='' style='visibility: hidden'>
+<label for='fileext'>Extension</label><input type='text' name='fileext' id='fileext' value='' style='visibility: hidden'>
+
+
+   
+
+
+
+<div></div>
+
+<div id='output'>
+
+</div>
+
+<button id='nsubmit' onclick='newsUpload()' >BUTTON</button>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="res/js/myJS.js"></script>
+<script src="res/js/mySaving.js"></script>
+      <script>
+
+
+
+
+      </script>
+</body>
+</html>

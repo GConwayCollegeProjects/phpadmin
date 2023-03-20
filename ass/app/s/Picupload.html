@@ -1,0 +1,91 @@
+<?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+
+
+
+?>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action = '../u/picHandler.php' id='formid'  name='formid' enctype='multipart/form-data' method='POST' >
+
+    <input type='file' name='file' accept='image/*'id='file'><br><br>
+
+    <input type='text' name='caption' id='caption' ><br><br>
+    <input type='text' name='fileid' id='fileid'  style="visibility: hidden">
+    <input type='text' name='userid' id='userid'  style="visibility: hidden" value=<?php echo $_SESSION['userid'] ?>
+    <input id='submit' type='submit' name='submit'  form='formid' style="visibility: hidden">
+</form>
+<button onclick="submitClick()">BUTTON</button>
+<div id='fileList'>
+
+</div>
+      <script>
+
+           const fileSelect = document.getElementById("fileSelect"),
+              file = document.getElementById("file"),
+              fileList = document.getElementById("fileList");
+
+          fileSelect.addEventListener("click", function (e) {
+              if (file) {
+                  file.click();
+              }
+              e.preventDefault(); // prevent navigation to "#"
+          }, false);
+
+          file.addEventListener("change", handleFiles, false);
+
+          function handleFiles() {
+              if (!this.files.length) {
+                  fileList.innerHTML = "<p>No files selected!</p>";
+              } else {
+                  fileList.innerHTML = "";
+                  const list = document.createElement("ul");
+                  fileList.appendChild(list);
+                  for (let i = 0; i < this.files.length; i++) {
+                      const li = document.createElement("li");
+                      list.appendChild(li);
+
+                      const img = document.createElement("img");
+                      img.src = URL.createObjectURL(this.files[i]);
+                      img.height = 200;
+                      img.onload = function() {
+                          URL.revokeObjectURL(this.src);
+                      }
+                      li.appendChild(img);
+                      document.getElementById("caption").style.display = 'block';
+                      document.getElementById("submit").style.display = 'block';
+                      document.getElementById("fileSelect").style.display = 'none';
+                      //const info = document.createElement("span");
+                      //info.innerHTML = this.files[i].name + ": " + this.files[i].size + " bytes";
+                     // li.appendChild(info);
+                  }
+              }
+          }
+
+           function submitClick() {
+              userid =
+
+               submit = document.getElementById("submit");
+
+               if (submit) {
+                   submit.click();
+
+               }
+           }
+
+      </script>
+<script src="../ass/res/js/jquery.min.js"></script>
+<script src="../ass/res/js/bootstrap.min.js"></script>
+</body>
+</html>

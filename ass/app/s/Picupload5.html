@@ -1,0 +1,59 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+
+
+
+?>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form id='formid'  name='formid' enctype='multipart/form-data' method='POST' >
+    <input type='file' name='ifile' accept='image/*' id='ifile' ><br><br>
+    <label for='caption'></label><input type='text' name='caption' id='caption' ><br><br>
+    <label for='userid'></label><input type='text' name='userid' id='userid' ><br><br>
+    <label for='fileid'></label><input type='text' name='fileid' id='fileid' value="" style="visibility: hidden">
+    <label for='fileext'></label><input type='text' name='fileext' id='fileext' value="" style="visibility: hidden">
+
+</form>
+<button onclick="doUpdate()">BUTTON</button>
+<div id='fileList'>
+
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+      <script>
+
+          function doUpdate() {
+
+
+              var form = $('formid')[0]; // You need to use standard javascript object here
+              var formData = new FormData(form);
+
+              $.ajax({
+                  url: '../../app/u/picHandler.php',
+                  data: formData,
+                  type: 'POST',
+                  contentType: false, // NEEDED, DON'T OMIT THIS (requires jQuery 1.6+)
+                  processData: false, // NEEDED, DON'T OMIT THIS
+                  error: function(xhr, status, err){ console.log(xhr, status, err); }
+              });
+
+
+          }
+
+
+      </script>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+
+
+
+?>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action = 'picTester.php' id='formid'  name='formid' enctype='multipart/form-data' method='POST' >
+    <input type='file' name='ifile' accept='image/*' id='ifile' onchange='doUpdate()'><br><br>
+    <label for='caption'></label><input type='text' name='caption' id='caption' ><br><br>
+    <label for='userid'></label><input type='text' name='userid' id='userid' ><br><br>
+    <label for='fileid'></label><input type='text' name='fileid' id='fileid' value="" style="visibility: hidden">
+    <label for='fileext'></label><input type='text' name='fileext' id='fileext' value="" style="visibility: hidden">
+    <input id='submit' type='submit' name='submit'  form='formid' style="visibility: hidden">
+</form>
+<button onclick="submitClick()">BUTTON</button>
+<div id='fileList'>
+
+</div>
+      <script>
+
+          function doUpdate() {
+              file = document.getElementById("ifile").innerHTML;
+              pieces = file.split(/[\s.]+/);
+              fileext = pieces[pieces.length-1];
+              document.getElementById("fileext").value = fileext;
+              submit = document.getElementById("submit");
+
+              submit.click();
+
+
+
+
+          }
+
+           function submitClick() {
+                alert("started");
+               // fileid = create_UUID();
+               file = document.getElementById("file").value;
+               alert(file);
+               pieces = file.split(/[\s.]+/);
+               fileext = pieces[pieces.length-1];
+               alert(fileext);
+               document.getElementById("fileext").value = fileext;
+           //  document.getElementById("fileid").value = fileid;
+          //     alert(fileid)
+               submit = document.getElementById("submit");
+               alert(submit);
+            if (submit) {
+                submit.click();
+            }
+
+           }
+
+      </script>
+<script src="../ass/res/js/jquery.min.js"></script>
+<script src="../ass/res/js/bootstrap.min.js"></script>
+</body>
+</html>

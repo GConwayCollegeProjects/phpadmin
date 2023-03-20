@@ -1,0 +1,557 @@
+
+addresses
+Column	Type	Null	Default
+add_id (Primary)	int(11)	No		
+add_desc	varchar(100)	No		
+add_line1	varchar(100)	No		
+add_line2	varchar(100)	Yes	NULL 	
+add_line3	varchar(100)	Yes	NULL 	
+add_town_id	int(11)	No		
+add_county_id	varchar(100)	Yes	NULL 	
+add_region_id	int(11)	No		
+add_country_id	int(11)	No		
+add_pcode	varchar(10)	No		
+add_area_id	int(11)	Yes	NULL 	
+add_district_id	int(11)	Yes	NULL 	
+add_added	datetime	No		
+add_amended	datetime	No		
+add_disabled	datetime	Yes	NULL 	
+add_change_by	int(11)	No		
+Indexes
+Keyname	Type	Unique	Packed	Column	Cardinality	Collation	Null	Comment
+PRIMARY	BTREE	Yes	No	add_id	0	A	No	
+add_disabled	BTREE	No	No	add_disabled	0	A	Yes	
+add_pcode	BTREE	No	No	add_pcode	0	A	No	
+add_change_by	BTREE	No	No	add_change_by	0	A	No	
+add_town_id	BTREE	No	No	add_town_id	0	A	No	
+add_county_id	BTREE	No	No	add_county_id	0	A	Yes	
+add_region_id	BTREE	No	No	add_region_id	0	A	No	
+add_area_id	BTREE	No	No	add_area_id	0	A	Yes	
+add_district_id	BTREE	No	No	add_district_id	0	A	Yes	
+announcements
+Column	Type	Null	Default
+ann_id (Primary)	int(11)	No	
+ann_pos_id	int(11)	No	
+ann_subject	varchar(100)	No	
+ann_type_id	int(11)	No	
+ann_img_id	int(11)	No	
+ann_gal_id	int(11)	No	
+ann_text	text	No	
+ann_show_from	datetime	No	
+ann_show_to	datetime	No	
+Indexes
+Keyname	Type	Unique	Packed	Column	Cardinality	Collation	Null	Comment
+PRIMARY	BTREE	Yes	No	ann_id	0	A	No	
+ann_pos_id	BTREE	No	No	ann_pos_id	0	A	No	
+ann_type_id	BTREE	No	No	ann_type_id	0	A	No	
+ann_img_id	BTREE	No	No	ann_img_id	0	A	No	
+ann_gal_id	BTREE	No	No	ann_gal_id	0	A	No	
+ann_show_index	BTREE	No	No	ann_type_id	0	A	No	
+ann_show_from	0	A	No
+areas
+Column	Type	Null	Default
+area_id (Primary)	int(11)	No	
+area_name	varchar(100)	No	
+area_dis_id	int(11)	No	
+Indexes
+Keyname	Type	Unique	Packed	Column	Cardinality	Collation	Null	Comment
+PRIMARY	BTREE	Yes	No	area_id	0	A	No	
+area_dis_id	BTREE	No	No	area_dis_id	0	A	No	
+comments
+Column	Type	Null	Default
+com_id (Primary)	int(11)	No	
+com_thr_id	int(11)	No	
+com_ind_id	int(11)	No	
+com_text	text	No	
+com_added	datetime	No	
+Indexes
+Keyname	Type	Unique	Packed	Column	Cardinality	Collation	Null	Comment
+PRIMARY	BTREE	Yes	No	com_id	0	A	No	
+com_thr_id	BTREE	No	No	com_thr_id	0	A	No	
+com_ind_id	BTREE	No	No	com_ind_id	0	A	No	
+com_thread_index	BTREE	No	No	com_thr_id	0	A	No	
+com_added	0	A	No
+costs
+Column	Type	Null	Default
+cos_id (Primary)	int(11)	No	
+cos_description	text	No	
+cos_amount	decimal(10,2)	Yes	NULL
+cos_added	datetime	No	
+cos_amended	datetime	No	
+cos_disabled	datetime	No	
+Indexes
+Keyname	Type	Unique	Packed	Column	Cardinality	Collation	Null	Comment
+PRIMARY	BTREE	Yes	No	cos_id	0	A	No	
+counties
+Column	Type	Null	Default
+cnt_id (Primary)	int(11)	No	
+cnt_name	varchar(100)	No	
+cnt_rgn_id	int(11)	No	
+Indexes
+Keyname	Type	Unique	Packed	Column	Cardinality	Collation	Null	Comment
+PRIMARY	BTREE	Yes	No	cnt_id	93	A	No	
+cnt_region_id	BTREE	No	No	cnt_rgn_id	1	A	No	
+countries
+Column	Type	Null	Default
+cty_id (Primary)	int(11)	No	
+cty_name	varchar(100)	No	
+Indexes
+Keyname	Type	Unique	Packed	Column	Cardinality	Collation	Null	Comment
+PRIMARY	BTREE	Yes	No	cty_id	0	A	No	
+cty_name	BTREE	No	No	cty_name	0	A	No	
+districts
+Column	Type	Null	Default
+dis_id (Primary)	int(11)	No	
+dis_name	varchar(100)	No	
+dis_county_id	int(11)	No	
+Indexes
+Keyname	Type	Unique	Packed	Column	Cardinality	Collation	Null	Comment
+PRIMARY	BTREE	Yes	No	dis_id	0	A	No	
+dis_county_index	BTREE	Yes	No	dis_county_id	0	A	No	
+dis_name	0	A	No
+dis_name	BTREE	No	No	dis_name	0	A	No	
+employments
+Column	Type	Null	Default
+emp_id (Primary)	int(11)	No	
+emp_pos_id	int(11)	No	
+emp_typ_id	int(11)	No	
+emp_wanted	tinyint(1)	Yes	0
+emp_title	varchar(100)	No	
+emp_img_id	int(11)	Yes	NULL
+emp_gal_id	int(11)	Yes	NULL
+emp_text	text	Yes	NULL
+emp_html	text	Yes	NULL
+emp_show_from	date	No	
+emp_show_to	date	No	
+Indexes
+Keyname	Type	Unique	Packed	Column	Cardinality	Collation	Null	Comment
+PRIMARY	BTREE	Yes	No	emp_id	0	A	No	
+emp_pos_id	BTREE	No	No	emp_pos_id	0	A	No	
+emp_typ_id	BTREE	No	No	emp_typ_id	0	A	No	
+emp_img_id	BTREE	No	No	emp_img_id	0	A	Yes	
+emp_gal_id	BTREE	No	No	emp_gal_id	0	A	Yes	
+emp_wanted_index	BTREE	No	No	emp_wanted	0	A	Yes	
+emp_show_from	0	A	No
+events
+Column	Type	Null	Default
+evt_id (Primary)	int(11)	No	
+evt_pos_id	int(11)	No	
+evt_typ_id	int(11)	No	
+evt_name	varchar(100)	No	
+evt_add_id	int(11)	Yes	NULL
+evt_img_id	int(11)	Yes	NULL
+evt_gal_id	int(11)	Yes	NULL
+evt_cost_id	int(11)	Yes	NULL
+evt_text	text	Yes	NULL
+evt_html	text	Yes	NULL
+evt_show_from	datetime	No	
+evt_show_to	datetime	No	
+evt_meet_start	datetime	No	
+evt_meet_end	datetime	No	
+evt_meet_info	varchar(100)	Yes	NULL
+Indexes
+Keyname	Type	Unique	Packed	Column	Cardinality	Collation	Null	Comment
+PRIMARY	BTREE	Yes	No	evt_id	0	A	No	
+evt_pos_id	BTREE	No	No	evt_pos_id	0	A	No	
+evt_typ_id	BTREE	No	No	evt_typ_id	0	A	No	
+evt_add_id	BTREE	No	No	evt_add_id	0	A	Yes	
+evt_img_id	BTREE	No	No	evt_img_id	0	A	Yes	
+evt_gal_id	BTREE	No	No	evt_gal_id	0	A	Yes	
+evt_cost_id	BTREE	No	No	evt_cost_id	0	A	Yes	
+evt_meet_start	BTREE	No	No	evt_meet_start	0	A	No	
+evt_start_index	BTREE	No	No	evt_typ_id	0	A	No	
+evt_meet_start	0	A	No
+galleries
+Column	Type	Null	Default
+gal_id (Primary)	int(11)	No	
+gal_ind_id	int(11)	No	
+gal_typ_id	int(11)	No	
+gal_gli_id	int(11)	No	
+gal_name	varchar(100)	Yes	NULL
+gal_added	datetime	No	
+gal_amended	datetime	No	
+gal_disabled	datetime	Yes	NULL
+gal_changed_by	int(11)	No	
+Indexes
+Keyname	Type	Unique	Packed	Column	Cardinality	Collation	Null	Comment
+PRIMARY	BTREE	Yes	No	gal_id	0	A	No	
+gal_ind_id	BTREE	No	No	gal_ind_id	0	A	No	
+gal_typ_id	0	A	No
+gal_name	BTREE	No	No	gal_name	0	A	Yes	
+gal_typ_id	BTREE	No	No	gal_typ_id	0	A	No	
+gal_gli_id	BTREE	No	No	gal_gli_id	0	A	No	
+gallinks
+Column	Type	Null	Default
+gli_id (Primary)	int(11)	No	
+gli_img_id	int(11)	No	
+gli_gal_id	int(11)	No	
+gli_order	int(11)	No	
+Indexes
+Keyname	Type	Unique	Packed	Column	Cardinality	Collation	Null	Comment
+PRIMARY	BTREE	Yes	No	gli_id	0	A	No	
+gli_gal_order	BTREE	Yes	No	gli_gal_id	0	A	No	
+gli_order	0	A	No
+gli_img_id	BTREE	No	No	gli_img_id	0	A	No	
+gli_gal_id	BTREE	No	No	gli_gal_id	0	A	No	
+groups
+Column	Type	Null	Default
+grp_id (Primary)	int(11)	No	
+grp_ind_id	int(11)	No	
+grp_name	varchar(100)	No	
+grp_total	int(11)	No	
+grp_added	datetime	No	
+grp_amended	datetime	No	
+grp_disabled	datetime	Yes	NULL
+grp_changed_by	int(11)	No	
+Indexes
+Keyname	Type	Unique	Packed	Column	Cardinality	Collation	Null	Comment
+PRIMARY	BTREE	Yes	No	grp_id	0	A	No	
+grp_ind_id	BTREE	No	No	grp_ind_id	0	A	No	
+grp_name	BTREE	No	No	grp_name	0	A	No	
+images
+Column	Type	Null	Default
+img_id (Primary)	int(11)	No	
+img_ind_id	int(11)	No	
+img_ext	char(4)	No	
+img_added	datetime	No	
+img_amended	datetime	No	
+img_disabled	datetime	Yes	NULL
+img_changed_by	int(11)	No	
+Indexes
+Keyname	Type	Unique	Packed	Column	Cardinality	Collation	Null	Comment
+PRIMARY	BTREE	Yes	No	img_id	0	A	No	
+img_ind_id	BTREE	No	No	img_ind_id	0	A	No	
+individuals
+Column	Type	Null	Default
+ind_id (Primary)	int(11)	No	
+ind_add_id	int(11)	Yes	NULL
+ind_img_id	int(11)	Yes	NULL
+ind_title_id	int(11)	Yes	NULL
+ind_role_id	int(11)	No	
+ind_firstname	varchar(100)	No	
+ind_middles	varchar(100)	Yes	NULL
+ind_lastname	varchar(100)	No	
+ind_screen	varchar(100)	No	
+ind_pword	varbinary(255)	No	
+ind_phone	varchar(100)	Yes	NULL
+ind_mobile	varchar(100)	Yes	NULL
+ind_email	varchar(100)	No	
+ind_facebook	varchar(100)	Yes	NULL
+ind_twitter	varchar(100)	Yes	NULL
+ind_instagram	varchar(100)	Yes	NULL
+ind_added	datetime	No	
+ind_amended	datetime	No	
+ind_disabled	datetime	Yes	NULL
+ind_changed_by	int(11)	No	
+Indexes
+Keyname	Type	Unique	Packed	Column	Cardinality	Collation	Null	Comment
+PRIMARY	BTREE	Yes	No	ind_id	0	A	No	
+ind_email	BTREE	Yes	No	ind_email	0	A	No	
+ind_pword_index	BTREE	Yes	No	ind_email	0	A	No	
+ind_pword	0	A	No
+ind_screen	BTREE	Yes	No	ind_screen	0	A	No	
+ind_instagram	BTREE	Yes	No	ind_instagram	0	A	Yes	
+ind_twitter	BTREE	Yes	No	ind_twitter	0	A	Yes	
+ind_facebook	BTREE	Yes	No	ind_facebook	0	A	Yes	
+ind_mobile	BTREE	Yes	No	ind_mobile	0	A	Yes	
+ind_add_id	BTREE	No	No	ind_add_id	0	A	Yes	
+ind_img_id	BTREE	No	No	ind_img_id	0	A	Yes	
+ind_title_id	BTREE	No	No	ind_title_id	0	A	Yes	
+ind_name_index	BTREE	No	No	ind_lastname	0	A	No	
+ind_firstname	0	A	No
+ind_role_id	BTREE	No	No	ind_role_id	0	A	No	
+indroles
+Column	Type	Null	Default
+ir_id (Primary)	int(11)	No	
+ir_name	varchar(100)	No	
+Indexes
+Keyname	Type	Unique	Packed	Column	Cardinality	Collation	Null	Comment
+PRIMARY	BTREE	Yes	No	ir_id	4	A	No	
+ir_name	BTREE	No	No	ir_name	4	A	No	
+jobs
+Column	Type	Null	Default
+job_id (Primary)	int(11)	No	
+job_pos_id	int(11)	No	
+job_name	varchar(100)	No	
+job_typ_id	int(11)	No	
+job_add_id	int(11)	Yes	NULL
+job_text	text	Yes	NULL
+job_html	text	Yes	NULL
+job_img_id	int(11)	Yes	NULL
+job_gal_id	int(11)	Yes	NULL
+job_start	datetime	No	
+job_show_from	datetime	No	
+job_show_to	datetime	No	
+Indexes
+Keyname	Type	Unique	Packed	Column	Cardinality	Collation	Null	Comment
+PRIMARY	BTREE	Yes	No	job_id	0	A	No	
+job_pos_id	BTREE	No	No	job_pos_id	0	A	No	
+job_typ_id	BTREE	No	No	job_typ_id	0	A	No	
+job_add_id	BTREE	No	No	job_add_id	0	A	Yes	
+job_img_id	BTREE	No	No	job_img_id	0	A	Yes	
+job_gal_id	BTREE	No	No	job_gal_id	0	A	Yes	
+job_show_index	BTREE	No	No	job_typ_id	0	A	No	
+job_show_from	0	A	No
+job_show_from	BTREE	No	No	job_show_from	0	A	No	
+news
+Column	Type	Null	Default
+new_id (Primary)	int(11)	No	
+new_pos_id	int(11)	No	
+new_typ_id	int(11)	No	
+new_img_id	int(11)	Yes	NULL
+new_gal_id	int(11)	Yes	NULL
+new_subject	varchar(100)	No	
+new_text	text	Yes	NULL
+new_html	text	Yes	NULL
+new_show_from	datetime	No	
+new_show_to	datetime	No	
+Indexes
+Keyname	Type	Unique	Packed	Column	Cardinality	Collation	Null	Comment
+PRIMARY	BTREE	Yes	No	new_id	0	A	No	
+new_pos_id	BTREE	No	No	new_pos_id	0	A	No	
+new_typ_id	BTREE	No	No	new_typ_id	0	A	No	
+new_img_id	BTREE	No	No	new_img_id	0	A	Yes	
+new_gal_id	BTREE	No	No	new_gal_id	0	A	Yes	
+new_show_index	BTREE	No	No	new_typ_id	0	A	No	
+new_show_from	0	A	No
+new_show_from	BTREE	No	No	new_show_from	0	A	No	
+offers
+Column	Type	Null	Default
+off_id (Primary)	int(11)	No	
+off_pos_id	int(11)	No	
+off_subject	varchar(100)	No	
+off_typ_id	int(11)	No	
+off_add_id	int(11)	Yes	NULL
+off_img_id	int(11)	Yes	NULL
+off_gal_id	int(11)	Yes	NULL
+off_cost_id	int(11)	Yes	NULL
+off_text	text	Yes	NULL
+off_html	text	Yes	NULL
+off_show_from	datetime	No	
+off_show_to	datetime	No	
+Indexes
+Keyname	Type	Unique	Packed	Column	Cardinality	Collation	Null	Comment
+PRIMARY	BTREE	Yes	No	off_id	0	A	No	
+off_pos_id	BTREE	No	No	off_pos_id	0	A	No	
+off_typ_id	BTREE	No	No	off_typ_id	0	A	No	
+off_add_id	BTREE	No	No	off_add_id	0	A	Yes	
+off_show_from	0	A	No
+off_img_id	BTREE	No	No	off_img_id	0	A	Yes	
+off_gal_id	BTREE	No	No	off_gal_id	0	A	Yes	
+off_cost_id	BTREE	No	No	off_cost_id	0	A	Yes	
+off_show_from	BTREE	No	No	off_show_from	0	A	No	
+off_show_index	BTREE	No	No	off_typ_id	0	A	No	
+off_show_from	0	A	No
+organisations
+Column	Type	Null	Default
+org_id (Primary)	int(11)	No	
+org_add_same	tinyint(1)	No	0
+org_add_id	int(11)	No	
+org_ind_id	int(11)	No	
+org_grp_id	int(11)	Yes	NULL
+org_img_id	int(11)	Yes	NULL
+org_gal_id	int(11)	Yes	NULL
+org_name	varchar(100)	Yes	NULL
+org_strap	varchar(100)	No	
+org_text	text	Yes	NULL
+org_html	text	Yes	NULL
+org_typ_id	int(11)	No	
+org_sic_id	int(11)	Yes	NULL
+org_conum	varchar(10)	Yes	NULL
+org_reg_id	tinyint(1)	Yes	NULL
+org_vatnum	varchar(10)	Yes	NULL
+org_phone	varchar(25)	Yes	NULL
+org_mobile	varchar(25)	Yes	NULL
+org_email	varchar(100)	Yes	NULL
+org_web	varchar(255)	Yes	NULL
+org_facebook	varchar(100)	Yes	NULL
+org_twitter	varchar(100)	Yes	NULL
+org_instagram	varchar(100)	Yes	NULL
+org_added	datetime	No	
+org_amended	datetime	No	
+org_disabled	datetime	Yes	NULL
+org_changed_by	int(11)	No	
+Indexes
+Keyname	Type	Unique	Packed	Column	Cardinality	Collation	Null	Comment
+PRIMARY	BTREE	Yes	No	org_id	0	A	No	
+org_add_id	BTREE	No	No	org_add_id	0	A	No	
+org_ind_id	BTREE	No	No	org_ind_id	0	A	No	
+org_grp_id	BTREE	No	No	org_grp_id	0	A	Yes	
+org_typ_id	BTREE	No	No	org_typ_id	0	A	No	
+org_sic_id	BTREE	No	No	org_sic_id	0	A	Yes	
+org_reg_id	BTREE	No	No	org_reg_id	0	A	Yes	
+org_img_id	BTREE	No	No	org_img_id	0	A	Yes	
+org_gal_id	BTREE	No	No	org_gal_id	0	A	Yes	
+orgindlinks
+Column	Type	Null	Default
+oil_id (Primary)	int(11)	No	
+oil_org_id	int(11)	No	
+oil_ind_id	int(11)	No	
+oil_owner	tinyint(1)	No	0
+oil_org_role	varchar(100)	No	
+oil_added	int(11)	No	
+oil_amended	datetime	No	
+oil_disabled	int(11)	Yes	NULL
+oil_changed_by	int(11)	No	
+Indexes
+Keyname	Type	Unique	Packed	Column	Cardinality	Collation	Null	Comment
+PRIMARY	BTREE	Yes	No	oil_id	0	A	No	
+oil_org_index	BTREE	Yes	No	oil_org_id	0	A	No	
+oil_ind_id	0	A	No
+oil_ind_index	BTREE	Yes	No	oil_ind_id	0	A	No	
+oil_org_id	0	A	No
+oil_org_id	BTREE	No	No	oil_org_id	0	A	No	
+oil_ind_id	BTREE	No	No	oil_ind_id	0	A	No	
+orgindroles
+Column	Type	Null	Default
+oir_id (Primary)	int(11)	No	
+oir_role	varchar(100)	No	
+Indexes
+Keyname	Type	Unique	Packed	Column	Cardinality	Collation	Null	Comment
+PRIMARY	BTREE	Yes	No	oir_id	0	A	No	
+oir_role	BTREE	No	No	oir_role	0	A	No	
+posts
+Column	Type	Null	Default
+pos_id (Primary)	int(11)	No	
+pos_type_id	int(11)	No	
+pos_ind_id	int(11)	No	
+pos_org_id	int(11)	Yes	NULL
+pos_added	datetime	No	
+pos_amended	datetime	No	
+pos_disabled	datetime	Yes	NULL
+pos_changed_by	int(11)	No	
+Indexes
+Keyname	Type	Unique	Packed	Column	Cardinality	Collation	Null	Comment
+PRIMARY	BTREE	Yes	No	pos_id	0	A	No	
+pos_type_id	BTREE	No	No	pos_type_id	0	A	No	
+pos_ind_id	BTREE	No	No	pos_ind_id	0	A	No	
+pos_added	BTREE	No	No	pos_added	0	A	No	
+pos_org_id	BTREE	No	No	pos_org_id	0	A	Yes	
+pos_changed_by	BTREE	No	No	pos_changed_by	0	A	No	
+regions
+Column	Type	Null	Default
+rgn_id (Primary)	int(11)	No	
+rgn_name	varchar(100)	No	
+rgn_cty_id	int(11)	No	
+Indexes
+Keyname	Type	Unique	Packed	Column	Cardinality	Collation	Null	Comment
+PRIMARY	BTREE	Yes	No	rgn_id	0	A	No	
+rgn_cty_id	BTREE	No	No	rgn_cty_id	0	A	No	
+rgn_name	BTREE	No	No	rgn_name	0	A	No	
+regplaces
+Column	Type	Null	Default
+reg_id (Primary)	int(11)	No	
+reg_place	varchar(100)	No	
+Indexes
+Keyname	Type	Unique	Packed	Column	Cardinality	Collation	Null	Comment
+PRIMARY	BTREE	Yes	No	reg_id	0	A	No	
+reg_place	BTREE	No	No	reg_place	0	A	No	
+routes
+Column	Type	Null	Default
+rte_id (Primary)	int(11)	No	
+rte_pos_id	int(11)	No	
+rte_typ_id	int(11)	No	
+rte_places_id	int(11)	No	
+rte_subject	varchar(100)	No	
+rte_add_id	int(11)	Yes	NULL
+rte_img_id	int(11)	Yes	NULL
+rte_gal_id	int(11)	Yes	NULL
+rte_text	text	Yes	NULL
+rte_html	text	Yes	NULL
+rte_map	varchar(100)	Yes	NULL
+rte_gpx	varchar(100)	Yes	NULL
+rte_meet_info	varchar(100)	No	
+Indexes
+Keyname	Type	Unique	Packed	Column	Cardinality	Collation	Null	Comment
+PRIMARY	BTREE	Yes	No	rte_id	0	A	No	
+rte_pos_id	BTREE	No	No	rte_pos_id	0	A	No	
+rte_add_id	BTREE	No	No	rte_add_id	0	A	Yes	
+rte_img_id	BTREE	No	No	rte_img_id	0	A	Yes	
+rte_gal_id	BTREE	No	No	rte_gal_id	0	A	Yes	
+rte_typ_id	BTREE	No	No	rte_typ_id	0	A	No	
+rteplaces
+Column	Type	Null	Default
+rpl_id (Primary)	int(11)	No	
+rpl_name	varchar(100)	No	
+rpl_rgn_id	int(11)	No	
+Indexes
+Keyname	Type	Unique	Packed	Column	Cardinality	Collation	Null	Comment
+PRIMARY	BTREE	Yes	No	rpl_id	0	A	No	
+rpl_name	BTREE	No	No	rpl_name	0	A	No	
+rpl_rgn_id	BTREE	No	No	rpl_rgn_id	0	A	No	
+salesandwants
+Column	Type	Null	Default
+saw_id (Primary)	int(11)	No	
+saw_pos_id	int(11)	No	
+saw_typ_id	int(11)	No	
+saw_subject	varchar(100)	No	
+saw_add_id	int(11)	Yes	NULL
+saw_img_id	int(11)	Yes	NULL
+saw_gal_id	int(11)	Yes	NULL
+saw_cost_id	int(11)	Yes	NULL
+saw_text	text	Yes	NULL
+saw_html	text	Yes	NULL
+saw_show_from	datetime	No	
+saw_show_to	datetime	No	
+Indexes
+Keyname	Type	Unique	Packed	Column	Cardinality	Collation	Null	Comment
+PRIMARY	BTREE	Yes	No	saw_id	0	A	No	
+saw_typ_id	BTREE	No	No	saw_typ_id	0	A	No	
+saw_pos_id	BTREE	No	No	saw_pos_id	0	A	No	
+saw_add_id	BTREE	No	No	saw_add_id	0	A	Yes	
+saw_img_id	BTREE	No	No	saw_img_id	0	A	Yes	
+saw_gal_id	BTREE	No	No	saw_gal_id	0	A	Yes	
+saw_cost_id	BTREE	No	No	saw_cost_id	0	A	Yes	
+saw_show_from	BTREE	No	No	saw_show_from	0	A	No	
+saw_show_index	BTREE	No	No	saw_typ_id	0	A	No	
+saw_show_from	0	A	No
+siccodes
+Column	Type	Null	Default
+sic_id (Primary)	int(11)	No	
+sic_code	int(11)	No	
+sic_name	varchar(100)	No	
+Indexes
+Keyname	Type	Unique	Packed	Column	Cardinality	Collation	Null	Comment
+PRIMARY	BTREE	Yes	No	sic_id	0	A	No	
+sic_code	BTREE	No	No	sic_code	0	A	No	
+sic_name	BTREE	No	No	sic_name	0	A	No	
+threads
+Column	Type	Null	Default
+thr_id (Primary)	int(11)	No	
+thr_pos_id	int(11)	No	
+thr_subject	varchar(100)	No	
+thr_typ_id	int(11)	No	
+thr_typ_id_id	int(11)	Yes	NULL
+thr_img_id	int(11)	Yes	NULL
+com_show_from	datetime	No	
+com_show_to	datetime	No	
+Indexes
+Keyname	Type	Unique	Packed	Column	Cardinality	Collation	Null	Comment
+PRIMARY	BTREE	Yes	No	thr_id	0	A	No	
+thr_pos_id	BTREE	No	No	thr_pos_id	0	A	No	
+thr_typ_id	BTREE	No	No	thr_typ_id	0	A	No	
+thr_img_id	BTREE	No	No	thr_img_id	0	A	Yes	
+thr_typ_id_id	BTREE	No	No	thr_typ_id_id	0	A	Yes	
+titles
+Column	Type	Null	Default 	Comments
+title_id (Primary)	int(11)	No	
+title_name	varchar(100)	No	
+Indexes
+Keyname	Type	Unique	Packed	Column	Cardinality	Collation	Null	Comment
+PRIMARY	BTREE	Yes	No	title_id	6	A	No	
+title_name	BTREE	No	No	title_name	6	A	No	
+towns
+Column	Type	Null	Default 	Comments
+town_id (Primary)	int(11)	No	
+town_name	varchar(100)	No	
+town_cnt_id	int(11)	No	
+Indexes
+Keyname	Type	Unique	Packed	Column	Cardinality	Collation	Null	Comment
+PRIMARY	BTREE	Yes	No	town_id	0	A	No	
+town_name	BTREE	No	No	town_name	0	A	No	
+town_county_id	BTREE	No	No	town_cnt_id	0	A	No	
+types
+Column	Type	Null	Default 	Comments
+typ_id (Primary)	int(11)	No	
+typ_type	char(3)	No	
+typ_name	varchar(100)	No	

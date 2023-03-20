@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../res/js/jquery.min.js"></script>
+</head>
+<body>
+
+<input class="joint upld" type='file' id="imgInp" />
+<canvas id="cvs"></canvas>
+<br/>
+
+
+
+<script type="text/javascript">
+
+    $('input').change(function() {
+
+        var fr = new FileReader;
+
+        fr.onload = function() {
+            var img = new Image;
+            img.onload = function() {
+                var c = document.getElementById("cvs");
+                var ctx = c.getContext("2d");
+                ctx.drawImage(img, 0, 0, 200, 180);
+            }
+            img.src = fr.result;
+
+        };
+        console.log(this.files[0]);
+        fr.readAsDataURL(this.files[0]);
+
+    });
+
+    <script src="https://ajax.googlea
+</script>
+</body>
+</html>

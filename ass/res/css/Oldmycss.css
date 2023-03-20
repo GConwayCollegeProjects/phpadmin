@@ -1,0 +1,347 @@
+.site-home {
+	margin: 0 auto;
+	padding: 0;
+	
+}
+
+.main-container {
+	
+	
+}
+.site-home .form-container{
+  margin: 0 auto;
+  min-width: 300px;
+  max-width: 300px;
+
+
+}
+
+.site-home .form-container .options{
+  margin: 0 auto;
+ padding: 0;
+
+
+}
+.site-home form{
+  display: table-cell;
+   z-index: 4;
+  position:relative;
+
+  
+  
+}
+
+
+
+.site-home .right-block{
+  max-height: 450px
+  
+
+}
+
+@media (max-width:991px) {
+  .site-home form {
+    padding: 40px;
+  }
+}
+
+.site-home form h2 {
+  font-size: 24px;
+  line-height: 1.2;
+  margin: 0 auto 10px auto;
+  z-index: 5;
+  position:relative;
+  color: white;
+}
+
+.site-home form .form-control{
+  background-color: #f7f9fc ;
+  margin: 0;
+  padding: 0 0 -20px 0;
+  border: none;
+  border-bottom: 1px solid #dfe7f1;
+  border-radius: 0;
+  width: 250px;
+  box-shadow: none;
+  outline: none;
+  color: white;
+  text-indent: 6px;
+  height: 30px ;
+  z-index:6;
+  position:relative;
+  
+}
+
+.site-home form button {
+	margin: 5px;
+	
+	
+}
+.site-home form .form-group label{
+	margin: 0;
+	padding: 0;
+	color: white;
+}
+.nname {
+
+	height: 40px !important;
+}
+
+
+.site-home form .form-check {
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.site-home form .btn-primary {
+  background: #f4476b;
+  border: none;
+  border-radius: 4px;
+  padding: 0;
+  box-shadow: none;
+  margin-top: 5px;
+  text-shadow: none;
+  outline: none !important;
+}
+
+.site-home form .btn-primary:hover, .site-home form .btn-primary:active {
+  background: #eb3b60;
+}
+
+.site-home form .btn-primary:active {
+  transform: translateY(1px);
+}
+
+.site-home form .already {
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  color: #6f7a85;
+  opacity: 0.9;
+  text-decoration: none;
+}
+
+
+.panel-height {
+  max-height: 450px;
+
+}
+
+#\#replaces_thisdiv {
+
+  max-width: 900px;
+  min-height: 600px;
+  margin: 0 auto;
+  padding-top: 0;
+  }
+
+#reglink{
+  float: right;
+  margin: -20px 0 0 0;
+  padding: 0;
+
+
+}
+
+.options {
+  margin-left: 65px !important;
+
+}
+
+.my-widgets{
+
+  border-radius: 0;
+  height: 35px;
+  padding-right: 20px;
+
+}
+.widget{
+
+
+  padding-right: 5px;
+  padding-left: 5px;
+
+}
+
+.footer-widget{
+
+  padding: 0;
+  margin: 0;
+}
+
+.my-flags{
+  border-radius: 0;
+  height: 35px;
+  padding-right: 0;
+  margin-top: 5px;
+  margin-right: 0 ;
+
+
+}
+
+
+
+
+.my-button{
+  background-color: var(--my-blue);
+  color: var(--my-text);
+
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.my-button p{
+
+  font-size: 11px;
+  height: 6px;
+  padding: 3px;
+
+
+
+
+}
+
+#maps{
+
+
+  width:100%;
+  text-align:center;
+  font-size: 0; /* to close gap between inline elements of child */
+
+}
+
+#searchbox {
+  display: inline-block;
+  height: 25px;
+  width: 75%;
+}
+
+.navbar .navbar p{
+  color: darkgrey !important;
+  font-family: "Comic Sans MS", serif !important;
+  font-weight: bold !important;
+
+
+}
+
+.my_nav p{
+  color: blue !important;
+  font-family: Kalam, serif !important;
+  font-weight: bold !important;
+  font-size: larger;
+  margin: auto 0 auto 0;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  padding: 20px 0 0 20px;
+  z-index: 9;
+}
+
+.my_nav {
+
+
+}
+
+.my_search {
+  padding-left: 8%;
+  padding-top: 20px;
+
+}
+
+.my_burger{
+  width: 50px; !important;
+  height: 50px !important;
+  display: inline-block;
+}
+
+/* Cropper css starts here*/
+
+img {
+
+  display: block;
+
+  max-width: 100%;
+
+}
+
+.preview {
+
+  overflow: hidden;
+
+  width: 160px;
+
+  height: 160px;
+
+  margin: 10px;
+
+  border: 1px solid red;
+
+}
+
+.modal-lg{
+
+  max-width: 1000px !important;
+
+}
+
+/* Cropper css ends here*/
+
+
+#cropper {
+  visibility: hidden;
+  position:absolute;
+  height: 700px;
+  width: 800px;
+  z-index: 999;
+
+}
+
+.user_panel{
+  position: relative;
+  float: right;
+  margin: 0 400px 20px 0;
+  padding: 0 0 0 0;
+
+
+}
+
+.my_search {
+  margin: 0 0 0 0;
+  padding: 0;
+  height: 50px;
+  }
+  
+  /* Bootstrap nav layout starts here */
+  
+  .nav-item a{
+	  display: inline-block; 
+	  float:none; 
+	  text-align: center;'
+	  
+  }
+  
+  .nomargins {
+	  margin: 0;
+	  padding: 0;
+  }
+  
+  #tiny2 {
+	  
+	  Width: 480px;
+	  height: 400px;
+	  
+  }
+  
+  /* Bootstrap nav layout end here */
+  
+  
+  
+  
+  
+  
+  
+  

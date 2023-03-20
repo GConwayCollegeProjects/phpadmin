@@ -1,0 +1,358 @@
+dbms,TABLE_SCHEMA,TABLE_NAME,COLUMN_NAME,ORDINAL_POSITION,DATA_TYPE,CHARACTER_MAXIMUM_LENGTH,CONSTRAINT_TYPE,REFERENCED_TABLE_SCHEMA,REFERENCED_TABLE_NAME,REFERENCED_COLUMN_NAME
+mysql,sys,sys_config,variable,1,varchar,128,"PRIMARY KEY",NULL,NULL,NULL
+mysql,peakacti_unibus,bustimes,id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,peakacti_unibus,categories,type,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,peakacti_unibus,flags,flags_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,peakacti_unibus,stores,stores_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,peakacti_unibus,traintimes,id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,peakacti_local_pages,announcements,ann_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,peakacti_local_pages,orgindlinks,oil_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,peakacti_local_pages,orgindlinks,oil_org_id,2,int,NULL,UNIQUE,NULL,NULL,NULL
+mysql,peakacti_local_pages,orgindlinks,oil_ind_id,3,int,NULL,UNIQUE,NULL,NULL,NULL
+mysql,peakacti_local_pages,orgindlinks,oil_org_id,2,int,NULL,UNIQUE,NULL,NULL,NULL
+mysql,peakacti_local_pages,orgindlinks,oil_ind_id,3,int,NULL,UNIQUE,NULL,NULL,NULL
+mysql,peakacti_local_pages,employments,emp_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,peakacti_local_pages,jobs,job_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,peakacti_local_pages,news,new_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,peakacti_local_pages,salesandwants,saw_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,peakacti_local_pages,rteplaces,rpl_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,peakacti_local_pages,orgindroles,oir_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,peakacti_local_pages,addresses,add_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,peakacti_local_pages,posts,pos_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,peakacti_local_pages,towns,town_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,peakacti_local_pages,counties,cnt_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,peakacti_local_pages,countries,cty_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,peakacti_local_pages,titles,title_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,peakacti_local_pages,regions,rgn_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,peakacti_local_pages,costs,cos_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,peakacti_local_pages,groups,grp_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,peakacti_local_pages,types,typ_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,peakacti_local_pages,types,typ_type,2,char,3,UNIQUE,NULL,NULL,NULL
+mysql,peakacti_local_pages,types,typ_name,3,varchar,100,UNIQUE,NULL,NULL,NULL
+mysql,peakacti_local_pages,events,evt_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,peakacti_local_pages,offers,off_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,peakacti_local_pages,routes,rte_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,peakacti_local_pages,galleries,gal_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,peakacti_local_pages,gallinks,gli_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,peakacti_local_pages,gallinks,gli_gal_id,3,int,NULL,UNIQUE,NULL,NULL,NULL
+mysql,peakacti_local_pages,gallinks,gli_order,4,int,NULL,UNIQUE,NULL,NULL,NULL
+mysql,peakacti_local_pages,images,img_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,peakacti_local_pages,indroles,ir_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,peakacti_local_pages,organisations,org_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,peakacti_local_pages,individuals,ind_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,peakacti_local_pages,individuals,ind_email,13,varchar,100,UNIQUE,NULL,NULL,NULL
+mysql,peakacti_local_pages,individuals,ind_pword,10,varbinary,255,UNIQUE,NULL,NULL,NULL
+mysql,peakacti_local_pages,individuals,ind_email,13,varchar,100,UNIQUE,NULL,NULL,NULL
+mysql,peakacti_local_pages,individuals,ind_screen,9,varchar,100,UNIQUE,NULL,NULL,NULL
+mysql,peakacti_local_pages,individuals,ind_instagram,16,varchar,100,UNIQUE,NULL,NULL,NULL
+mysql,peakacti_local_pages,individuals,ind_twitter,15,varchar,100,UNIQUE,NULL,NULL,NULL
+mysql,peakacti_local_pages,individuals,ind_facebook,14,varchar,100,UNIQUE,NULL,NULL,NULL
+mysql,peakacti_local_pages,individuals,ind_mobile,12,varchar,100,UNIQUE,NULL,NULL,NULL
+mysql,peakacti_local_pages,areas,area_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,peakacti_local_pages,districts,dis_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,peakacti_local_pages,districts,dis_name,2,varchar,100,UNIQUE,NULL,NULL,NULL
+mysql,peakacti_local_pages,districts,dis_county_id,3,int,NULL,UNIQUE,NULL,NULL,NULL
+mysql,peakacti_local_pages,comments,com_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,peakacti_local_pages,threads,thr_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,peakacti_local_pages,regplaces,reg_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,peakacti_local_pages,siccodes,sic_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,peakacti_local_pages,addresses,add_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,events,evt_add_id
+mysql,peakacti_local_pages,addresses,add_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,individuals,ind_add_id
+mysql,peakacti_local_pages,addresses,add_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,jobs,job_add_id
+mysql,peakacti_local_pages,addresses,add_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,organisations,org_add_id
+mysql,peakacti_local_pages,addresses,add_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,routes,rte_add_id
+mysql,peakacti_local_pages,addresses,add_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,salesandwants,saw_add_id
+mysql,peakacti_local_pages,posts,pos_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,announcements,ann_pos_id
+mysql,peakacti_local_pages,posts,pos_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,threads,thr_pos_id
+mysql,peakacti_local_pages,posts,pos_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,employments,emp_pos_id
+mysql,peakacti_local_pages,posts,pos_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,events,evt_pos_id
+mysql,peakacti_local_pages,posts,pos_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,jobs,job_pos_id
+mysql,peakacti_local_pages,posts,pos_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,news,new_pos_id
+mysql,peakacti_local_pages,posts,pos_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,offers,off_pos_id
+mysql,peakacti_local_pages,posts,pos_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,routes,rte_pos_id
+mysql,peakacti_local_pages,posts,pos_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,salesandwants,saw_pos_id
+mysql,peakacti_local_pages,towns,town_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,addresses,add_town_id
+mysql,peakacti_local_pages,counties,cnt_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,towns,town_cnt_id
+mysql,peakacti_local_pages,countries,cty_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,regions,rgn_cty_id
+mysql,peakacti_local_pages,titles,title_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,individuals,ind_title_id
+mysql,peakacti_local_pages,regions,rgn_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,counties,cnt_rgn_id
+mysql,peakacti_local_pages,regions,rgn_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,rteplaces,rpl_rgn_id
+mysql,peakacti_local_pages,costs,cos_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,salesandwants,saw_cost_id
+mysql,peakacti_local_pages,costs,cos_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,events,evt_cost_id
+mysql,peakacti_local_pages,costs,cos_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,salesandwants,saw_cost_id
+mysql,peakacti_local_pages,groups,grp_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,organisations,org_grp_id
+mysql,peakacti_local_pages,types,typ_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,announcements,ann_type_id
+mysql,peakacti_local_pages,types,typ_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,threads,thr_typ_id
+mysql,peakacti_local_pages,types,typ_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,employments,emp_typ_id
+mysql,peakacti_local_pages,types,typ_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,events,evt_typ_id
+mysql,peakacti_local_pages,types,typ_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,galleries,gal_typ_id
+mysql,peakacti_local_pages,types,typ_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,jobs,job_typ_id
+mysql,peakacti_local_pages,types,typ_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,news,new_typ_id
+mysql,peakacti_local_pages,types,typ_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,offers,off_typ_id
+mysql,peakacti_local_pages,types,typ_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,organisations,org_typ_id
+mysql,peakacti_local_pages,types,typ_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,posts,pos_type_id
+mysql,peakacti_local_pages,types,typ_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,routes,rte_typ_id
+mysql,peakacti_local_pages,types,typ_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,salesandwants,saw_typ_id
+mysql,peakacti_local_pages,galleries,gal_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,announcements,ann_gal_id
+mysql,peakacti_local_pages,galleries,gal_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,events,evt_gal_id
+mysql,peakacti_local_pages,galleries,gal_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,galleries,gal_gli_id
+mysql,peakacti_local_pages,galleries,gal_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,jobs,job_gal_id
+mysql,peakacti_local_pages,galleries,gal_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,news,new_gal_id
+mysql,peakacti_local_pages,galleries,gal_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,offers,off_gal_id
+mysql,peakacti_local_pages,galleries,gal_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,organisations,org_gal_id
+mysql,peakacti_local_pages,galleries,gal_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,routes,rte_gal_id
+mysql,peakacti_local_pages,galleries,gal_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,routes,rte_gal_id
+mysql,peakacti_local_pages,images,img_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,announcements,ann_img_id
+mysql,peakacti_local_pages,images,img_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,employments,emp_img_id
+mysql,peakacti_local_pages,images,img_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,events,evt_img_id
+mysql,peakacti_local_pages,images,img_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,individuals,ind_img_id
+mysql,peakacti_local_pages,images,img_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,jobs,job_img_id
+mysql,peakacti_local_pages,images,img_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,news,new_img_id
+mysql,peakacti_local_pages,images,img_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,offers,off_img_id
+mysql,peakacti_local_pages,images,img_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,organisations,org_img_id
+mysql,peakacti_local_pages,images,img_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,routes,rte_img_id
+mysql,peakacti_local_pages,images,img_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,salesandwants,saw_img_id
+mysql,peakacti_local_pages,images,img_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,gallinks,gli_img_id
+mysql,peakacti_local_pages,indroles,ir_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,individuals,ind_role_id
+mysql,peakacti_local_pages,organisations,org_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,orgindlinks,oil_org_id
+mysql,peakacti_local_pages,organisations,org_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,posts,pos_org_id
+mysql,peakacti_local_pages,individuals,ind_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,orgindlinks,oil_ind_id
+mysql,peakacti_local_pages,individuals,ind_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,organisations,org_ind_id
+mysql,peakacti_local_pages,individuals,ind_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,posts,pos_ind_id
+mysql,peakacti_local_pages,districts,dis_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,addresses,add_district_id
+mysql,peakacti_local_pages,districts,dis_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,areas,area_dis_id
+mysql,peakacti_local_pages,threads,thr_id,1,int,NULL,"FOREIGN KEY",peakacti_local_pages,comments,com_thr_id
+mysql,sys,sys_config,value,2,varchar,128,NULL,NULL,NULL,NULL
+mysql,sys,sys_config,set_time,3,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,sys,sys_config,set_by,4,varchar,128,NULL,NULL,NULL,NULL
+mysql,peakacti_unibus,bustimes,due,2,varchar,12,NULL,NULL,NULL,NULL
+mysql,peakacti_unibus,bustimes,no,3,varchar,5,NULL,NULL,NULL,NULL
+mysql,peakacti_unibus,bustimes,place,4,varchar,25,NULL,NULL,NULL,NULL
+mysql,peakacti_unibus,bustimes,stop,5,varchar,5,NULL,NULL,NULL,NULL
+mysql,peakacti_unibus,bustimes,code,6,varchar,5,NULL,NULL,NULL,NULL
+mysql,peakacti_unibus,categories,typename,2,varchar,25,NULL,NULL,NULL,NULL
+mysql,peakacti_unibus,flags,code,2,varchar,5,NULL,NULL,NULL,NULL
+mysql,peakacti_unibus,flags,welcome,3,varchar,25,NULL,NULL,NULL,NULL
+mysql,peakacti_unibus,stores,name,2,varchar,25,NULL,NULL,NULL,NULL
+mysql,peakacti_unibus,stores,search,3,varchar,25,NULL,NULL,NULL,NULL
+mysql,peakacti_unibus,stores,png,4,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_unibus,stores,type,5,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_unibus,stores,typename,6,varchar,25,NULL,NULL,NULL,NULL
+mysql,peakacti_unibus,stores,location,7,varchar,25,NULL,NULL,NULL,NULL
+mysql,peakacti_unibus,stores,keywords,8,varchar,5,NULL,NULL,NULL,NULL
+mysql,peakacti_unibus,stores,shops,9,varchar,5,NULL,NULL,NULL,NULL
+mysql,peakacti_unibus,stores,food,10,varchar,5,NULL,NULL,NULL,NULL
+mysql,peakacti_unibus,stores,cafes,11,varchar,5,NULL,NULL,NULL,NULL
+mysql,peakacti_unibus,stores,leisure,12,varchar,5,NULL,NULL,NULL,NULL
+mysql,peakacti_unibus,traintimes,due,2,time,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_unibus,traintimes,station,3,varchar,45,NULL,NULL,NULL,NULL
+mysql,peakacti_unibus,traintimes,current,4,varchar,12,NULL,NULL,NULL,NULL
+mysql,peakacti_unibus,traintimes,Platform,5,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_unibus,traintimes,code,6,varchar,5,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,announcements,ann_pos_id,2,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,announcements,ann_subject,3,varchar,100,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,announcements,ann_type_id,4,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,announcements,ann_img_id,5,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,announcements,ann_gal_id,6,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,announcements,ann_text,7,text,65535,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,announcements,ann_show_from,8,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,announcements,ann_show_to,9,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,orgindlinks,oil_owner,4,tinyint,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,orgindlinks,oil_org_role,5,varchar,100,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,orgindlinks,oil_added,6,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,orgindlinks,oil_amended,7,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,orgindlinks,oil_disabled,8,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,orgindlinks,oil_changed_by,9,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,employments,emp_pos_id,2,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,employments,emp_typ_id,3,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,employments,emp_wanted,4,tinyint,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,employments,emp_title,5,varchar,100,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,employments,emp_img_id,6,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,employments,emp_gal_id,7,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,employments,emp_text,8,text,65535,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,employments,emp_html,9,text,65535,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,employments,emp_show_from,10,date,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,employments,emp_show_to,11,date,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,jobs,job_pos_id,2,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,jobs,job_name,3,varchar,100,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,jobs,job_typ_id,4,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,jobs,job_add_id,5,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,jobs,job_text,6,text,65535,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,jobs,job_html,7,text,65535,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,jobs,job_img_id,8,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,jobs,job_gal_id,9,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,jobs,job_start,10,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,jobs,job_show_from,11,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,jobs,job_show_to,12,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,news,new_pos_id,2,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,news,new_typ_id,3,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,news,new_img_id,4,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,news,new_gal_id,5,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,news,new_subject,6,varchar,100,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,news,new_text,7,text,65535,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,news,new_html,8,text,65535,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,news,new_show_from,9,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,news,new_show_to,10,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,salesandwants,saw_pos_id,2,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,salesandwants,saw_typ_id,3,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,salesandwants,saw_subject,4,varchar,100,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,salesandwants,saw_add_id,5,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,salesandwants,saw_img_id,6,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,salesandwants,saw_gal_id,7,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,salesandwants,saw_cost_id,8,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,salesandwants,saw_text,9,text,65535,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,salesandwants,saw_html,10,text,65535,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,salesandwants,saw_show_from,11,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,salesandwants,saw_show_to,12,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,rteplaces,rpl_name,2,varchar,100,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,rteplaces,rpl_rgn_id,3,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,orgindroles,oir_role,2,varchar,100,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,addresses,add_desc,2,varchar,100,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,addresses,add_line1,3,varchar,100,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,addresses,add_line2,4,varchar,100,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,addresses,add_line3,5,varchar,100,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,addresses,add_town_id,6,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,addresses,add_county_id,7,varchar,100,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,addresses,add_region_id,8,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,addresses,add_country_id,9,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,addresses,add_pcode,10,varchar,10,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,addresses,add_area_id,11,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,addresses,add_district_id,12,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,addresses,add_added,13,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,addresses,add_amended,14,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,addresses,add_disabled,15,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,addresses,add_change_by,16,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,posts,pos_type_id,2,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,posts,pos_ind_id,3,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,posts,pos_org_id,4,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,posts,pos_added,5,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,posts,pos_amended,6,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,posts,pos_disabled,7,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,posts,pos_changed_by,8,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,towns,town_name,2,varchar,100,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,towns,town_cnt_id,3,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,counties,cnt_name,2,varchar,100,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,counties,cnt_rgn_id,3,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,countries,cty_name,2,varchar,100,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,titles,title_name,2,varchar,100,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,regions,rgn_name,2,varchar,100,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,regions,rgn_cty_id,3,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,costs,cos_description,2,text,65535,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,costs,cos_amount,3,decimal,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,costs,cos_added,4,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,costs,cos_amended,5,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,costs,cos_disabled,6,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,groups,grp_ind_id,2,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,groups,grp_name,3,varchar,100,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,groups,grp_total,4,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,groups,grp_added,5,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,groups,grp_amended,6,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,groups,grp_disabled,7,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,groups,grp_changed_by,8,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,events,evt_pos_id,2,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,events,evt_typ_id,3,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,events,evt_name,4,varchar,100,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,events,evt_add_id,5,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,events,evt_img_id,6,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,events,evt_gal_id,7,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,events,evt_cost_id,8,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,events,evt_text,9,text,65535,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,events,evt_html,10,text,65535,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,events,evt_show_from,11,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,events,evt_show_to,12,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,events,evt_meet_start,13,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,events,evt_meet_end,14,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,events,evt_meet_info,15,varchar,100,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,offers,off_pos_id,2,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,offers,off_subject,3,varchar,100,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,offers,off_typ_id,4,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,offers,off_add_id,5,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,offers,off_img_id,6,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,offers,off_gal_id,7,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,offers,off_cost_id,8,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,offers,off_text,9,text,65535,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,offers,off_html,10,text,65535,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,offers,off_show_from,11,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,offers,off_show_to,12,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,routes,rte_pos_id,2,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,routes,rte_typ_id,3,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,routes,rte_places_id,4,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,routes,rte_subject,5,varchar,100,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,routes,rte_add_id,6,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,routes,rte_img_id,7,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,routes,rte_gal_id,8,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,routes,rte_text,9,text,65535,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,routes,rte_html,10,text,65535,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,routes,rte_map,11,varchar,100,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,routes,rte_gpx,12,varchar,100,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,routes,rte_meet_info,13,varchar,100,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,galleries,gal_ind_id,2,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,galleries,gal_typ_id,3,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,galleries,gal_gli_id,4,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,galleries,gal_name,5,varchar,100,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,galleries,gal_added,6,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,galleries,gal_amended,7,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,galleries,gal_disabled,8,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,galleries,gal_changed_by,9,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,gallinks,gli_img_id,2,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,images,img_ind_id,2,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,images,img_ext,3,char,4,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,images,img_added,4,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,images,img_amended,5,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,images,img_disabled,6,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,images,img_changed_by,7,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,indroles,ir_name,2,varchar,100,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,organisations,org_add_same,2,tinyint,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,organisations,org_add_id,3,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,organisations,org_ind_id,4,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,organisations,org_grp_id,5,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,organisations,org_img_id,6,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,organisations,org_gal_id,7,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,organisations,org_name,8,varchar,100,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,organisations,org_strap,9,varchar,100,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,organisations,org_text,10,text,65535,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,organisations,org_html,11,text,65535,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,organisations,org_typ_id,12,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,organisations,org_sic_id,13,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,organisations,org_conum,14,varchar,10,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,organisations,org_reg_id,15,tinyint,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,organisations,org_vatnum,16,varchar,10,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,organisations,org_phone,17,varchar,25,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,organisations,org_mobile,18,varchar,25,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,organisations,org_email,19,varchar,100,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,organisations,org_web,20,varchar,255,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,organisations,org_facebook,21,varchar,100,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,organisations,org_twitter,22,varchar,100,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,organisations,org_instagram,23,varchar,100,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,organisations,org_added,24,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,organisations,org_amended,25,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,organisations,org_disabled,26,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,organisations,org_changed_by,27,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,individuals,ind_add_id,2,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,individuals,ind_img_id,3,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,individuals,ind_title_id,4,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,individuals,ind_role_id,5,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,individuals,ind_firstname,6,varchar,100,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,individuals,ind_middles,7,varchar,100,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,individuals,ind_lastname,8,varchar,100,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,individuals,ind_phone,11,varchar,100,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,individuals,ind_added,17,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,individuals,ind_amended,18,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,individuals,ind_disabled,19,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,individuals,ind_changed_by,20,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,areas,area_name,2,varchar,100,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,areas,area_dis_id,3,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,comments,com_thr_id,2,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,comments,com_ind_id,3,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,comments,com_text,4,text,65535,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,comments,com_added,5,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,threads,thr_pos_id,2,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,threads,thr_subject,3,varchar,100,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,threads,thr_typ_id,4,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,threads,thr_typ_id_id,5,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,threads,thr_img_id,6,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,threads,com_show_from,7,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,threads,com_show_to,8,datetime,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,regplaces,reg_place,2,varchar,100,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,siccodes,sic_code,2,int,NULL,NULL,NULL,NULL,NULL
+mysql,peakacti_local_pages,siccodes,sic_name,3,varchar,100,NULL,NULL,NULL,NULL
