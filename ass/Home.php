@@ -41,14 +41,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-<script src="https://cdn.tiny.cloud/1/k0a77hfh9uryhtf52x82yjfz4tu70ynrtk6iwnsmrkqoglzp/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-<script src="../ass/res/js/mySaving.js"></script>
-<script src="../ass/res/js/myJS.js"></script>
-
-<script>
-
-
-</script>
+<script src="https://cdn.tiny.cloud/1/k0a77hfh9uryhtf52x82yjfz4tu70ynrtk6iwnsmrkqoglzp/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="adminJS.js"></script>
 </body>
-
 </html>

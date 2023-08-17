@@ -25,7 +25,7 @@ else {
 			$field1 = 'img_filename';
 			$field2 = 'img_ext';
 			$field3 = 'img_caption';
-			$sql = "SELECT * FROM images where img_ind_id = $userid";
+			$sql = "SELECT * FROM images where img_owner_id = $userid";
 			$path1 = "../../data/pics/";
 			$path2 = "../ass/data/pics/";
 			break;
@@ -34,7 +34,7 @@ else {
 			$field1 = 'vid_filename';
 			$field2 = 'vid_ext';
 			$field3 = 'vid_caption';
-			$sql = "SELECT * FROM videos where vid_ind_id = $userid";
+			$sql = "SELECT * FROM videos where vid_owner_id = $userid";
 			$path1 = "../../data/vids/";
 			$path2 = "../ass/data/vids/";
 			break;
@@ -42,15 +42,12 @@ else {
 			$field1 = 'pdf_filename';
 			$field2 = 'pdf_ext';
 			$field3 = 'pdf_caption';
-			$sql = "SELECT * FROM pdfs where pdf_ind_id = $userid";
+			$sql = "SELECT * FROM pdfs where pdf_owner_id = $userid";
 			$path1 = "../../data/pdfs/";
 			$path2 = "../ass/data/pdfs/";
 			break;
 	}
 // create record and get id
-
-
-
 
 		try {
 			$stmt = $pdo->prepare("$sql");
@@ -62,7 +59,6 @@ else {
 		} catch (PDOException $e) {
 			$error = $e->getMessage();
 		}
-
 
 	echo'<div class="container  overflow-auto" style="height:250px; width: 450px ">
             <div class="row"> 	<!--    DIV - Start of 	-->
@@ -103,7 +99,6 @@ else {
 					echo '</div>';
 					break;
 
-
 			}
 			if ($x ===3){
 				echo ' <div class="w-100"></div>';
@@ -115,14 +110,7 @@ else {
 			echo "can't find file";
 		}
 
-
-
 	}
-
-
-
-
-
 	echo '
                                                     
                                         </div> <!-- End of Row -->

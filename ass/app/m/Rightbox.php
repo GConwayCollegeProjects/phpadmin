@@ -79,7 +79,7 @@ class Rightbox
                                 <div  class = 'my-nav' id='cohortlist'  onclick='getOption(this.id)' style='background-color: var(--my-orange) !important' >                
                                 <div class='my-burger'> <a  id='def'><img width=30px height=30px src='res/img/burger.png' alt=''/></a>
                                 </div>
-                                <p>Add / Amend Cohorts</p>  </div>   
+                                <p>Add/Amend Cohorts</p>  </div>   
                                 
                                 
                                 

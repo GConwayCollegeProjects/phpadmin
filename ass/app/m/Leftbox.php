@@ -169,16 +169,37 @@ class Leftbox
 			            </div>
 			       <!-- Start of Image Tab -->       	
 			     <div id='Image' class='container tab-pane fade nomargins'><br>
-				 <label class='nomargins'>Image to be used:</label><br><input id='iFile' type='text' name='ifile'  size = '50' placeholder='No file selected' readonly>
-			     <label class='nomargins'>Caption to be used:</label><br><input type='text' name='icaption' id='iCaption'  placeholder='Choose image - then add/amend caption (required)' size = '50' ><br>
-				 <div id='iOutput' style='position:absolute; margin-top: 25px'></div>	
-				 <div id='iText3'>		     
-			     <div id='iText1'<p class='itext'><strong>Either</strong><br>
-			     <label class='itext' >Select an image from your computer (.jpg, .jpeg or .png only)</label><input id='iEntry' type='file' name='i' accept='image/*' onchange='showUpload(this.name)' ><br></div>
-			     <div id='iUpload' style='visibility: hidden; margin-top: 5px'><button  name='i' onclick='saveMedia(this.name)'>UPLOAD</button> to upload the selected image, (caption required first!).</p></div>
- 			     <p id='iText2' class='itext' ><strong>Or</strong><br>
- 			     <div id='iSelect' ><button name='i' onclick='fetchMedia(this.name)'>SELECT</button> from the images already saved in your account</p></div></div>
- 			      <div id='iClear' style='visibility: hidden; margin-top: 60px' ><button name='i' onclick='clearImage(this.name)'>Clear</button> currently selected image choice.</p></div>
+				 	<div id='iSelect'>
+						<button name='i' onclick='fetchMedia(this.name)'>SELECT</button>
+						<p>from the images already saved in your account</p>
+					</div>
+
+
+					<div id='iText1' class='itext'><strong>OR</strong><br>
+			     		<label class='itext' >Select an image from your computer (.jpg, .jpeg or .png only)</label>
+						<input id='iEntry' type='file' name='i' accept='image/*' onchange='showUpload(this.name)'><br>
+					</div>
+
+			     	<div id='iUpload' style='display: none; margin-top: 5px'>
+						<button  name='i' onclick='saveMedia(this.name)'>UPLOAD</button> 
+						<p>to upload the selected image, (caption required first!).</p>
+					</div>
+					<div id='iOutput' style='position:absolute; margin-top: 25px'>
+					</div>	
+
+					<div id='iNew' style='display: none; margin-top: 250px;'>
+				 	<label class='nomargins'>Image to be used:</label><br><input id='iFile' type='text' name='ifile'  size = '50' placeholder='No file selected' readonly>
+			     	<label class='nomargins'>Caption to be used:</label><br><input type='text' name='icaption' id='iCaption'  placeholder='Choose image - then add/amend caption (required)' size = '50' ><br>
+					</div>
+				 
+					<div id='iText3'>	</div>
+					<div id='iText2'>	</div>     
+			 			     
+			     			      			     
+ 			      	<div id='iClear' style='display: none; margin-top: 360px; position: fixed;' >
+						<button name='i' onclick='clearImage(this.name)'>Clear</button>
+						<p>currently selected image choice.</p>
+					</div>
  			   	</div>
  			   	<!-- Start of Meet Tab -->  
                	 <div id='Meet' class='container tab-pane fade nomargins'>

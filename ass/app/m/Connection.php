@@ -13,10 +13,10 @@ class Connection
 
     function _construct(){ }
 
-    public const USER = "peakacti_gconway";
-    public const PASSWORD = "#LovethePeaks";
-    public const HOST = "127.0.0.1";
-    public const DB = "peakacti_local_pages";
+    public const USER = "u260357075_gconwayuk";
+    public const PASSWORD = "#LovethePeaks48";
+    public const HOST = "sql582.main-hosting.eu";
+    public const DB = "u260357075_cohortology";
 
     public $pdo;
 
